@@ -7,7 +7,7 @@ user="root"
 pass="password"
 
 # Other options.
-backup_path="/home/sophie/Backups"
+backup_path="/home/Backups"
 date=$(date +"%Y-%m-%d")
 
 # Set default file permissions.
@@ -30,5 +30,5 @@ for db in $databases; do
 done
 
 # Remove database backups older than 7 days.
-find /home/sophie/Backups -mtime +7 -type f -delete
+find /home/Backups -mtime +7 -type f -delete
 echo "Deleted old databases."
