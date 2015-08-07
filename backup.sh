@@ -2,13 +2,20 @@
 
 clear
 
+######################
+# USER SET VARIABLES #
+######################
+
 # Database creds.
 user="root"
 pass="password"
-
 # Other options.
 backup_path="/home/Backups"
 date=$(date +"%Y-%m-%d")
+
+######################
+# MAIN FUNCTIONALITY #
+######################
 
 # Set default file permissions.
 umask 002
@@ -30,5 +37,5 @@ for db in $databases; do
 done
 
 # Remove database backups older than 7 days.
-find /home/Backups -mtime +7 -type f -delete
+find $backup_path -mtime +7 -type f -delete
 echo "Deleted old databases."
